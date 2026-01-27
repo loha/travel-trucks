@@ -1,0 +1,100 @@
+.bookingForm {
+  background: #ffffff;
+  border: 1px solid rgba(16, 24, 40, 0.1);
+  border-radius: 10px;
+  padding: 44px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #101828;
+  margin: 0 0 8px 0;
+}
+
+.subtitle {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+  margin: 0 0 24px 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  font-size: 16px;
+  color: #101828;
+  font-family: inherit;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(16, 24, 40, 0.6);
+}
+
+.input:focus,
+.textarea:focus {
+  outline: 2px solid #e44848;
+}
+
+.inputError {
+  outline: 2px solid #e44848;
+}
+
+.dateInput {
+  cursor: pointer;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(20%);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 114px;
+}
+
+.error {
+  font-size: 14px;
+  color: #e44848;
+  margin-top: 4px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 16px;
+  background-color: #e44848;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 200px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.submitButton:hover {
+  background-color: #d84343;
+}
+
+.submitButton:active {
+  background-color: #c93d3d;
+}

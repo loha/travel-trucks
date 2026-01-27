@@ -1,0 +1,126 @@
+.filters {
+  background: #ffffff;
+  border: 1px solid rgba(16, 24, 40, 0.1);
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #6c717b;
+  margin-bottom: 8px;
+}
+
+.locationInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.locationIcon {
+  position: absolute;
+  left: 18px;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 18px 18px 18px 48px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  font-size: 16px;
+  color: #101828;
+}
+
+.input::placeholder {
+  color: rgba(16, 24, 40, 0.6);
+}
+
+.input:focus {
+  outline: 2px solid #e44848;
+}
+
+.subheading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #101828;
+  margin: 0 0 24px 0;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(16, 24, 40, 0.1);
+  margin-bottom: 24px;
+}
+
+.features,
+.types {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.featureButton,
+.typeButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 12px;
+  background-color: transparent;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  color: #101828;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.featureButton:hover,
+.typeButton:hover {
+  border-color: #e44848;
+}
+
+.featureButtonActive,
+.typeButtonActive {
+  border-color: #e44848;
+  background-color: rgba(228, 72, 72, 0.05);
+}
+
+.featureButton svg,
+.typeButton svg {
+  width: 32px;
+  height: 32px;
+}
+
+.searchButton {
+  width: 100%;
+  padding: 16px;
+  background-color: #e44848;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 200px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 32px;
+}
+
+.searchButton:hover {
+  background-color: #d84343;
+}
+
+.searchButton:active {
+  background-color: #c93d3d;
+}
