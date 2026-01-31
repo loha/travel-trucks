@@ -44,7 +44,7 @@ const CatalogPage = () => {
           ) : error ? (
             <div className={styles.error}>Error: {error}</div>
           ) : items.length === 0 ? (
-            <div className={styles.noResults}>No campers found with the selected filters.</div>
+            <div className={styles.noResults}>No vehicles found with the selected filters. Please try adjusting your search criteria.</div>
           ) : (
             <>
               <div className={styles.campersList}>

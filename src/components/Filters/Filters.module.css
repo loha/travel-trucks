@@ -1,6 +1,6 @@
 .filters {
   background: #ffffff;
-  border: 1px solid rgba(16, 24, 40, 0.1);
+  border: none;
   border-radius: 10px;
   padding: 40px;
 }
@@ -84,6 +84,7 @@
   color: #101828;
   font-size: 14px;
   font-weight: 500;
+  text-transform: capitalize;
 }
 
 .featureButton:hover,
@@ -104,7 +105,7 @@
 }
 
 .searchButton {
-  width: 100%;
+  width: 50%;
   padding: 16px;
   background-color: #e44848;
   color: white;

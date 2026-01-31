@@ -6,6 +6,7 @@ const filtersSlice = createSlice({
     location: '',
     form: '',
     AC: false,
+    transmission: false,
     kitchen: false,
     TV: false,
     bathroom: false,
@@ -25,6 +26,7 @@ const filtersSlice = createSlice({
       state.location = '';
       state.form = '';
       state.AC = false;
+      state.transmission = false;
       state.kitchen = false;
       state.TV = false;
       state.bathroom = false;

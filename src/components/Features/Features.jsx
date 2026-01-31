@@ -1,19 +1,20 @@
+import Icon from '../Icon/Icon';
 import styles from './Features.module.css';
 
 const Features = ({ camper }) => {
   const getFeatures = () => {
     const features = [];
-    if (camper.transmission) features.push({ icon: '⚙️', label: camper.transmission });
-    if (camper.engine) features.push({ icon: '⛽', label: camper.engine });
-    if (camper.AC) features.push({ icon: '❄️', label: 'AC' });
-    if (camper.bathroom) features.push({ icon: '🚿', label: 'Bathroom' });
-    if (camper.kitchen) features.push({ icon: '🍳', label: 'Kitchen' });
-    if (camper.TV) features.push({ icon: '📺', label: 'TV' });
-    if (camper.radio) features.push({ icon: '📻', label: 'Radio' });
-    if (camper.refrigerator) features.push({ icon: '🧊', label: 'Refrigerator' });
-    if (camper.microwave) features.push({ icon: '📟', label: 'Microwave' });
-    if (camper.gas) features.push({ icon: '🔥', label: 'Gas' });
-    if (camper.water) features.push({ icon: '💧', label: 'Water' });
+    if (camper.transmission) features.push({ icon: 'transmission', label: camper.transmission });
+    if (camper.engine) features.push({ icon: 'gas', label: camper.engine });
+    if (camper.AC) features.push({ icon: 'AC', label: 'AC' });
+    if (camper.bathroom) features.push({ icon: 'bathroom', label: 'Bathroom' });
+    if (camper.kitchen) features.push({ icon: 'kitchen', label: 'Kitchen' });
+    if (camper.TV) features.push({ icon: 'TV', label: 'TV' });
+    if (camper.radio) features.push({ icon: 'radio', label: 'Radio' });
+    if (camper.refrigerator) features.push({ icon: 'refrigerator', label: 'Refrigerator' });
+    if (camper.microwave) features.push({ icon: 'microwave', label: 'Microwave' });
+    if (camper.gas) features.push({ icon: 'gas', label: 'Gas' });
+    if (camper.water) features.push({ icon: 'water', label: 'Water' });
     return features;
   };
 
@@ -22,9 +23,7 @@ const Features = ({ camper }) => {
       <div className={styles.featuresList}>
         {getFeatures().map((feature, index) => (
           <div key={index} className={styles.feature}>
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M10 2L12 8H18L13 12L15 18L10 14L5 18L7 12L2 8H8L10 2Z" fill="#101828"/>
-            </svg>
+            <Icon name={feature.icon} width={20} height={20} stroke="none" fill="none" />
             <span>{feature.label}</span>
           </div>
         ))}

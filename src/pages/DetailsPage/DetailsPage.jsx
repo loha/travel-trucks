@@ -5,6 +5,7 @@ import { fetchCamperById } from '../../store/campersSlice';
 import Features from '../../components/Features/Features';
 import Reviews from '../../components/Reviews/Reviews';
 import BookingForm from '../../components/BookingForm/BookingForm';
+import Icon from '../../components/Icon/Icon';
 import styles from './DetailsPage.module.css';
 
 const DetailsPage = () => {
@@ -46,17 +47,13 @@ const DetailsPage = () => {
           <h1 className={styles.title}>{currentCamper.name}</h1>
           <div className={styles.headerInfo}>
             <div className={styles.rating}>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M8 1.5L9.5 6.5H14.5L10.5 9.5L12 14.5L8 11.5L4 14.5L5.5 9.5L1.5 6.5H6.5L8 1.5Z" fill="#FFC531" stroke="#FFC531" strokeWidth="1"/>
-              </svg>
+              <Icon name="star-active" width={16} height={16} fill="none" stroke="none" />
               <span className={styles.ratingText}>
                 {currentCamper.rating} ({currentCamper.reviews?.length || 0} Reviews)
               </span>
             </div>
             <div className={styles.location}>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M8 0C5.243 0 3 2.243 3 5C3 8.5 8 14 8 14C8 14 13 8.5 13 5C13 2.243 10.757 0 8 0ZM8 7C6.895 7 6 6.105 6 5C6 3.895 6.895 3 8 3C9.105 3 10 3.895 10 5C10 6.105 9.105 7 8 7Z" fill="#101828"/>
-              </svg>
+              <Icon name="map" width={16} height={16} stroke="none" fill="none" />
               <span>{currentCamper.location}</span>
             </div>
           </div>

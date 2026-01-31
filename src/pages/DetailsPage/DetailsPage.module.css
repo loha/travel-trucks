@@ -1,6 +1,6 @@
 .detailsPage {
   min-height: 100vh;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   padding: 48px 0;
 }
 
@@ -121,7 +121,7 @@
 
 .content {
   display: grid;
-  grid-template-columns: 1fr 448px;
+  grid-template-columns: 1fr 1fr;
   gap: 24px;
 }
 

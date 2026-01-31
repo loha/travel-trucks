@@ -3,9 +3,10 @@ import styles from './Header.module.css';
 
 const Header = () => {
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isHomePage ? styles.headerHome : styles.headerOther}`}>
       <div className={styles.container}>
         <Link to="/" className={styles.logo}>
           TravelTrucks

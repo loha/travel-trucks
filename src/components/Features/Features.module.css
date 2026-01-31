@@ -1,5 +1,5 @@
 .features {
-  background: #ffffff;
+  background: #f7f7f7;
   border-radius: 10px;
   padding: 44px;
 }
@@ -21,6 +21,7 @@
   font-size: 16px;
   font-weight: 500;
   color: #101828;
+  text-transform: capitalize;
 }
 
 .feature svg {

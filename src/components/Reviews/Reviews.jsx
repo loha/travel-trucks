@@ -1,23 +1,18 @@
+import Icon from '../Icon/Icon';
 import styles from './Reviews.module.css';
 
 const Reviews = ({ reviews }) => {
   const renderStars = (rating) => {
     return [...Array(5)].map((_, index) => (
-      <svg
+      <Icon
         key={index}
-        width="16"
-        height="16"
-        viewBox="0 0 16 16"
+        name={index < rating ? 'star-active' : 'star'}
+        width={16}
+        height={16}
         fill="none"
+        stroke="none"
         className={styles.star}
-      >
-        <path
-          d="M8 1.5L9.5 6.5H14.5L10.5 9.5L12 14.5L8 11.5L4 14.5L5.5 9.5L1.5 6.5H6.5L8 1.5Z"
-          fill={index < rating ? '#FFC531' : '#F2F4F7'}
-          stroke={index < rating ? '#FFC531' : '#F2F4F7'}
-          strokeWidth="1"
-        />
-      </svg>
+      />
     ));
   };
 

@@ -1,10 +1,17 @@
 .header {
-  background-color: #ffffff;
   border-bottom: 1px solid rgba(16, 24, 40, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.headerHome {
+  background-color: #ffffff;
+}
+
+.headerOther {
+  background-color: #f7f7f7;
 }
 
 .container {

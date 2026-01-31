@@ -1,7 +1,7 @@
 .reviews {
   background: #ffffff;
   border-radius: 10px;
-  padding: 44px;
+  padding: 0;
 }
 
 .reviewsList {
@@ -11,8 +11,8 @@
 }
 
 .reviewItem {
-  padding-bottom: 28px;
-  border-bottom: 1px solid rgba(16, 24, 40, 0.1);
+  padding-bottom: 15px;
+  border-bottom: none;
 }
 
 .reviewItem:last-child {

@@ -37,7 +37,7 @@
   padding: 18px;
   border: none;
   border-radius: 10px;
-  background-color: #f7f7f7;
+  background-color: #F7F7F7;
   font-size: 16px;
   color: #101828;
   font-family: inherit;
@@ -78,7 +78,7 @@
 }
 
 .submitButton {
-  width: 100%;
+  width: 166px;
   padding: 16px;
   background-color: #e44848;
   color: white;
@@ -88,7 +88,8 @@
   border-radius: 200px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 10px;
+  margin: 10px auto 0;
+  display: block;
 }
 
 .submitButton:hover {

@@ -54,6 +54,7 @@ class MockApiService extends AxiosService {
    * @param {string} filters.location - Location filter
    * @param {string} filters.form - Vehicle form/type
    * @param {boolean} filters.AC - Has AC
+   * @param {boolean} filters.transmission - Has automatic transmission
    * @param {boolean} filters.kitchen - Has kitchen
    * @param {boolean} filters.TV - Has TV
    * @param {boolean} filters.bathroom - Has bathroom
@@ -61,25 +62,50 @@ class MockApiService extends AxiosService {
    */
   async filterCampers(filters = {}) {
     try {
-      // Fetch all campers first
-      const allCampers = await this.getAllCampers();
+      // Build query parameters
+      const params = new URLSearchParams();
       
-      // Check if any filters are actually active
-      const hasActiveFilters = 
-        (filters.location && filters.location.trim() !== '') ||
-        (filters.form && filters.form !== '') ||
-        filters.AC === true ||
-        filters.kitchen === true ||
-        filters.TV === true ||
-        filters.bathroom === true;
-      
-      // If no active filters, return all items
-      if (!hasActiveFilters) {
-        return allCampers;
+      // Add location filter
+      if (filters.location && filters.location.trim() !== '') {
+        params.append('location', filters.location.trim());
       }
       
-      // Apply client-side filtering
-      let filteredItems = allCampers;
+      // Add form filter
+      if (filters.form && filters.form !== '') {
+        params.append('form', filters.form);
+      }
+      
+      // Add equipment filters
+      if (filters.AC === true) {
+        params.append('AC', 'true');
+      }
+      
+      if (filters.transmission === true) {
+        params.append('transmission', 'automatic');
+      }
+      
+      if (filters.kitchen === true) {
+        params.append('kitchen', 'true');
+      }
+      
+      if (filters.TV === true) {
+        params.append('TV', 'true');
+      }
+      
+      if (filters.bathroom === true) {
+        params.append('bathroom', 'true');
+      }
+      
+      // Build URL with query parameters
+      const queryString = params.toString();
+      const url = queryString ? `/campers?${queryString}` : '/campers';
+      
+      // Make request with query parameters
+      const data = await this.get(url);
+      const items = data.items || [];
+      
+      // Apply client-side filtering as backup (since MockAPI may not support all query params)
+      let filteredItems = items;
       
       // Filter by location (case-insensitive, partial match)
       if (filters.location && filters.location.trim() !== '') {
@@ -97,6 +123,11 @@ class MockApiService extends AxiosService {
       // Filter by AC
       if (filters.AC === true) {
         filteredItems = filteredItems.filter(item => item.AC === true);
+      }
+      
+      // Filter by transmission (automatic)
+      if (filters.transmission === true) {
+        filteredItems = filteredItems.filter(item => item.transmission === 'automatic');
       }
       
       // Filter by kitchen
@@ -117,6 +148,12 @@ class MockApiService extends AxiosService {
       return filteredItems;
     } catch (error) {
       console.error('Failed to filter campers:', error.message);
+      
+      // Handle 404 Not Found errors
+      if (error.response?.status === 404) {
+        return []; // Return empty array for no results
+      }
+      
       throw new Error('Failed to filter campers. Please try again later.');
     }
   }
